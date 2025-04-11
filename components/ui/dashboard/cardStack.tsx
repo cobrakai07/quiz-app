@@ -1,12 +1,18 @@
 import FontAwesome from '@expo/vector-icons/FontAwesome';
 import React, { useState } from 'react';
 import { View, Text, TouchableOpacity, StyleSheet, Dimensions } from 'react-native';
+import { PieChart } from 'react-native-gifted-charts';
 
 const initialCards = [
   { id: 1, title: 'Top Card', description: 'Tap to remove this card.' },
   { id: 2, title: 'Middle Card', description: 'Tap to remove this card.' },
   { id: 3, title: 'Bottom Card', description: 'Tap to remove this card.' },
   { id: 4, title: 'Bottom Card last', description: 'Tap to remove this card.' },
+];
+
+const pieData = [
+  {value: 70, color: '#177AD5'},
+  {value: 30, color: 'lightgray'}
 ];
 
 const screenWidth = Dimensions.get('window').width-40;
@@ -51,7 +57,19 @@ const CardStack = () => {
            <View className='flex flex-row justify-between mt-4'>
             <View>
             <Text style={styles.description}>Studied 7 days ago</Text>
-            <Text style={styles.description}>Progress 20%</Text>
+            
+            <View className='flex flex-row gap-2'>
+            <Text style={styles.description}>Progress</Text>
+            <PieChart
+                donut
+                innerRadius={10}
+                radius={15}
+                data={pieData}
+                centerLabelComponent={() => {
+                return <Text style={{fontSize: 7}}>70%</Text>;
+                }}
+            />
+            </View>
             </View>
             <View className='flex justify-center items-center'>
             <FontAwesome size={28} name="times-circle" color={"black"} />
