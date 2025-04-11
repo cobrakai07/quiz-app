@@ -27,6 +27,7 @@ export default function RootLayout() {
   return (
     <QuizProvider>
       <Stack>
+      <Stack.Screen name="(dashboard)" options={{ headerShown: false }} />
         <Stack.Screen name="(quiz)" options={{ headerShown: false }} />
         <Stack.Screen name="+not-found" />
       </Stack>
