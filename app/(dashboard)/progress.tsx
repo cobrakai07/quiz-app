@@ -66,7 +66,15 @@ const Progress = () => {
           <View className="flex justify-center items-center">
           <MyGiftedLineChart/>
           </View>
-
+            
+          <View className="flex justify-center items-center">
+          <View className="w-[95%] h-[120px] bg-gray-700 rounded-[20px] border">
+                    <View className="w-[100%] h-[120px] bg-gray-50 -m-[6px]  rounded-[20px] border flex justify-center items-center">
+                      <Text className="text-2xl ">Task</Text>
+                      <Text className="text-2xl ">Task details</Text>
+                    </View>
+          </View>
+          </View>
           
          
         </ScrollView>

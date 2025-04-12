@@ -143,14 +143,15 @@ const dashboardpage = () => {
             </View>
             </View> */}
 
-          <View className="flex justify-center items-center">
+          
+          
+          <CardStack />
+          <View className="flex justify-center items-center mt-6">
             <Image
               source={require("../../assets/task/task.jpg")}
               className="h-[220px] w-[220px]"
             />
           </View>
-          
-          <CardStack />
         </ScrollView>
       </View>
     </View>

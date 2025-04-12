@@ -14,7 +14,7 @@ const MyPieChart = () => {
   {value: 3, color: '#FFA5BA', gradientCenterColor: '#FF7F97'},
 ];
 
-const renderDot = color => {
+const renderDot = (color:string) => {
   return (
     <View
       style={{
@@ -30,68 +30,55 @@ const renderDot = color => {
 
 const renderLegendComponent = () => {
   return (
-    <>
-      <View
-        style={{
-          flexDirection: 'row',
-          justifyContent: 'center',
-          marginBottom: 10,
-        }}>
+    <View style={{
+      flexDirection: 'column',
+      justifyContent: 'center',
+      
+    }}>
+    
+      
         <View
           style={{
             flexDirection: 'row',
             alignItems: 'center',
-            width: 120,
-            marginRight: 20,
           }}>
           {renderDot('#006DFF')}
-          <Text style={{color: 'white'}}>Excellent: 47%</Text>
+          <Text style={{color: 'black'}}>Excellent: 47%</Text>
         </View>
         <View
           style={{flexDirection: 'row', alignItems: 'center', width: 120}}>
           {renderDot('#8F80F3')}
-          <Text style={{color: 'white'}}>Okay: 16%</Text>
+          <Text style={{color: 'black'}}>Okay: 16%</Text>
         </View>
-      </View>
-      <View style={{flexDirection: 'row', justifyContent: 'center'}}>
         <View
           style={{
             flexDirection: 'row',
             alignItems: 'center',
-            width: 120,
-            marginRight: 20,
           }}>
           {renderDot('#3BE9DE')}
-          <Text style={{color: 'white'}}>Good: 40%</Text>
+          <Text style={{color: 'black'}}>Good: 40%</Text>
         </View>
         <View
           style={{flexDirection: 'row', alignItems: 'center', width: 120}}>
           {renderDot('#FF7F97')}
-          <Text style={{color: 'white'}}>Poor: 3%</Text>
+          <Text style={{color: 'black'}}>Poor: 3%</Text>
         </View>
-      </View>
-    </>
+     
+    </View>
   );
 };
 
 return (
-  <View
-    style={{
-      paddingVertical: 0,
-    //   backgroundColor: '#34448B',
-      flex: 1,
-    }}>
     <View
       style={{
-        margin: 20,
-        padding: 16,
-        borderRadius: 20,
-        backgroundColor: '#000',// background
+        display:"flex",
+        flexDirection:"row-reverse",
+        justifyContent:"space-between",
+        padding:10
+       
       }}>
-      <Text style={{color: 'white', fontSize: 16, fontWeight: 'bold'}}>
-        Performance
-      </Text>
-      <View style={{padding: 20, alignItems: 'center'}}>
+      
+      <View style={{ alignItems: 'center'}}>
         <PieChart
           data={pieData}
           donut
@@ -117,7 +104,7 @@ return (
       </View>
       {renderLegendComponent()}
     </View>
-  </View>);
+  );
 }
 
 export default MyPieChart;

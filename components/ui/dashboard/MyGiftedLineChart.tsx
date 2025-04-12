@@ -11,6 +11,8 @@ const MyGiftedLineChart = () => {
         areaChart
         curved
         data={data}
+        height={150}
+        hideYAxisText // HIDES Y AXIS DATA
         startFillColor="rgb(46, 217, 255)"
         startOpacity={0.8}
         endFillColor="rgb(203, 241, 250)"
